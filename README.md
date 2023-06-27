@@ -28,16 +28,30 @@ ___
     ```
 
 4. Review the `docker-compose.yml` file to verify the container structure is correct
-5. If using a reverse proxy, go through the `docker-compose.traefik.yml` file and change all instances of `<desired-address>` to your desired web address.
-6. Review the `.gitignore` file to add any
-   additional directories and contents to ignore.
+5. If you are using Traefik, go through the `docker-compose.traefik.yml` file and change all instances of `<desired-address>` to your desired web address.
+
+   ```sh
+     services:
+       gateway:
+         healthcheck:
+           disable: true
+         labels:
+           traefik.enable: "true"
+           traefik.hostname: <desired-address>
+         environment:
+           GATEWAY_SYSTEM_NAME: <desired-address>
+         networks:
+           - default
+           - proxy
+	```
+6. Review the `.gitignore` file to add any additional directories and contents to ignore.
 7. To name the compose project that will be built, edit the `.env` file and set the `COMPOSE_PROJECT_NAME` variable to the name of your project.
 
-	```sh
-	COMPOSE_PROJECT_NAME=<project-name>
+   	```sh
+    COMPOSE_PROJECT_NAME=<project-name>
 	```
 
-	If you are using Traefik, uncomment the following lines in the `.env` file:
+   If you are using Traefik, uncomment the following lines in the `.env` file:
 
 	```sh
 	COMPOSE_PATH_SEPARATOR=:
