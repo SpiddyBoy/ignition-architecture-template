@@ -80,7 +80,7 @@ ___
 
 10. Whether or not you are using Traefik, you can access the gateway at [http://localhost:9080/](http://localhost:9080/)
 
-11. If you are using Traefik, you can access the gateway at `http://<desired-address>.localtest.me`
+11. If you are using Traefik, you can also access the gateway at `http://<desired-address>.localtest.me`
 
 ___
 
