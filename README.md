@@ -37,7 +37,7 @@ ___
 	COMPOSE_PROJECT_NAME=<project-name>
 	```
 
-	If you are **NOT** using traefik, you can delete or comment out the following lines:
+	If you are using Traefik, uncomment the following lines in the `.env` file:
 
 	```sh
 	COMPOSE_PATH_SEPARATOR=:
@@ -64,9 +64,9 @@ ___
     docker-compose pull && docker-compose up -d
     ```
 
-10. In a web browser, access the gateway at `http://localhost/` (No port is required, since the template is using port 80)
+10. Whether or not you are using Traefik, you can access the gateway at [http://localhost:9080/](http://localhost:9080/)
 
-11. If using traefik as a proxy, access the gateway at `http://<desired-address>.localtest.me`
+11. If you are using Traefik, you can access the gateway at `http://<desired-address>.localtest.me`
 
 ___
 
